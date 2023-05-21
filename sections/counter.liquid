@@ -8,49 +8,55 @@
   assign final_message = ss.final_message | escape
 %}
 
-<section class="counter" data-date="{{ countdown_year }},{{ countdown_month }},{{ countdown_day }},{{ countdown_hour }}">
-  <div class="countdown__inner">
+{% if countdown_year != blank and countdown_month != blank and countdown_day != blank and countdown_hour != blank %}
+  {{ 'sections.counter.css' | asset_url | stylesheet_tag }}
+  {{ 'sections.counter.js' | asset_url | script_tag }}
 
-    <h4 class="counter__welcome-message">
-      {{ welcome_message }}
-    </h4>
+  <section class="counter" data-date="{{ countdown_year }},{{ countdown_month }},{{ countdown_day }},{{ countdown_hour }}">
+    <div class="countdown__inner">
 
-    <div class="counter__wrapper">
-      <div class="counter__time-holder">
-        <span class="counter__time-data days"></span>
-        <span class="counter__time-helper">
-          Days
-        </span>
+      <h4 class="counter__welcome-message">
+        {{ welcome_message }}
+      </h4>
+
+      <div class="counter__wrapper">
+        <div class="counter__time-holder">
+          <span class="counter__time-data days"></span>
+          <span class="counter__time-helper">
+            Days
+          </span>
+        </div>
+
+        <div class="counter__time-holder">
+          <span class="counter__time-data hours"></span>
+          <span class="counter__time-helper">
+            Hours
+          </span>
+        </div>
+
+        <div class="counter__time-holder">
+          <span class="counter__time-data minutes"></span>
+          <span class="counter__time-helper">
+            Minutes
+          </span>
+        </div>
+
+        <div class="counter__time-holder">
+          <span class="counter__time-data seconds"></span>
+          <span class="counter__time-helper">
+            Seconds
+          </span>
+        </div>
       </div>
 
-      <div class="counter__time-holder">
-        <span class="counter__time-data hours"></span>
-        <span class="counter__time-helper">
-          Hours
-        </span>
-      </div>
+      <h4 class="counter__welcome-message">
+        {{ final_message }}
+      </h4>
 
-      <div class="counter__time-holder">
-        <span class="counter__time-data minutes"></span>
-        <span class="counter__time-helper">
-          Minutes
-        </span>
-      </div>
-
-      <div class="counter__time-holder">
-        <span class="counter__time-data seconds"></span>
-        <span class="counter__time-helper">
-          Seconds
-        </span>
-      </div>
     </div>
+  </section>
 
-    <h4 class="counter__welcome-message">
-      {{ final_message }}
-    </h4>
-
-  </div>
-</section>
+{% endif %}
 
 {% schema %}
   {
