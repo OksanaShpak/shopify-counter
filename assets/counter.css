@@ -32,7 +32,3 @@
 .counter__final-message {
   display: none;
 }
-
-.counter__final-message.is-visible {
-  display: block;
-}
