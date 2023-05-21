@@ -11,6 +11,17 @@
         "countdown_hour": 7
       }
     },
+    "6e5b537f-5cec-4877-9600-305fc3695b37": {
+      "type": "counter",
+      "settings": {
+        "welcome_message": "Hurry up you have just:",
+        "final_message": "Sorry, you ran out of time!",
+        "countdown_year": 2023,
+        "countdown_month": 1,
+        "countdown_day": 1,
+        "countdown_hour": 0
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -80,6 +91,7 @@
   },
   "order": [
     "counter",
+    "6e5b537f-5cec-4877-9600-305fc3695b37",
     "image_banner",
     "featured_collection"
   ]
