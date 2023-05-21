@@ -1,5 +1,16 @@
 {
   "sections": {
+    "counter": {
+      "type": "counter",
+      "settings": {
+        "welcome_message": "Hurry up you have just:",
+        "final_message": "Sorry, you ran out of time!",
+        "countdown_year": 2023,
+        "countdown_month": 6,
+        "countdown_day": 7,
+        "countdown_hour": 7
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -64,11 +75,6 @@
         "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
-      }
-    },
-    "counter": {
-      "type": "counter",
-      "settings": {
       }
     }
   },
