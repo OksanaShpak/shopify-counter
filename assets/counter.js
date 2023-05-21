@@ -1,3 +1,5 @@
+console.log('counter.js loaded')
+
 const counter = document.querySelector('.counter');
 const days = document.querySelector('.days');
 const hours = document.querySelector('.hours');
@@ -19,17 +21,19 @@ function updateCounter() {
   const m = Math.floor(diff / 1000 / 60) % 60;
   const s = Math.floor(diff / 1000) % 60;
 
-  days.textContent = d < 10 ? `<span>0</span><span>${ d }</span>` : d.toString().split('').map(digit => `<span>${ digit }</span>`).join("");
-  hours.textContent = h < 10 ? `<span>0</span><span>${ h }</span>` : h.toString().split('').map(digit => `<span>${ digit }</span>`).join("");
-  minutes.textContent = m < 10 ? `<span>0</span><span>${ m }</span>` : m.toString().split('').map(digit => `<span>${ digit }</span>`).join("");
-  seconds.textContent = s < 10 ? `<span>0</span><span>${ s }</span>` : s.toString().split('').map(digit => `<span>${ digit }</span>`).join("");
+  days.innerHTML = d < 10 ? `<span>0</span><span>${ d }</span>` : d.toString().split('').map(digit => `<span>${ digit }</span>`).join("");
+  hours.innerHTML = h < 10 ? `<span>0</span><span>${ h }</span>` : h.toString().split('').map(digit => `<span>${ digit }</span>`).join("");
+  minutes.innerHTML = m < 10 ? `<span>0</span><span>${ m }</span>` : m.toString().split('').map(digit => `<span>${ digit }</span>`).join("");
+  seconds.innerHTML = s < 10 ? `<span>0</span><span>${ s }</span>` : s.toString().split('').map(digit => `<span>${ digit }</span>`).join("");
 
 
   if (diff < 0) {
     clearInterval(interval);
-    days.textContent = '<span>0</span><span>0</span>';
-    hours.textContent = '<span>0</span><span>0</span>';
-    minutes.textContent = '<span>0</span><span>0</span>';
-    seconds.textContent = '<span>0</span><span>0</span>';
+    const daysContainer = document.querySelector('.is-days');
+    daysContainer.style.display = 'none';
+    // days.innerHTML = '<span>0</span><span>0</span>';
+    hours.innerHTML = '<span>0</span><span>0</span>';
+    minutes.innerHTML = '<span>0</span><span>0</span>';
+    seconds.innerHTML = '<span>0</span><span>0</span>';
   }
 }

@@ -1,0 +1,37 @@
+.counter {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.counter__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.counter__wrapper {
+  display: flex;
+}
+
+.counter__time-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border: 1px solid black;
+}
+
+.counter__time-holder:not(:first-child) {
+  margin-left: 60px;
+}
+
+.counter__final-message {
+  display: none;
+}
+
+.counter__final-message.is-visible {
+  display: block;
+}
