@@ -1,0 +1,117 @@
+{% liquid
+  assign ss = section.settings
+  assign countdown_year = ss.countdown_year
+  assign countdown_month = ss.countdown_month
+  assign countdown_day = ss.countdown_day
+  assign countdown_hour = ss.countdown_hour
+  assign welcome_message = ss.welcome_message | escape
+  assign final_message = ss.final_message | escape
+%}
+
+<section class="counter" data-date="{{ countdown_year }},{{ countdown_month }},{{ countdown_day }},{{ countdown_hour }}">
+  <div class="countdown__inner">
+
+    <h4 class="counter__welcome-message">
+      {{ welcome_message }}
+    </h4>
+
+    <div class="counter__wrapper">
+      <div class="counter__time-holder">
+        <span class="counter__time-data days"></span>
+        <span class="counter__time-helper">
+          Days
+        </span>
+      </div>
+
+      <div class="counter__time-holder">
+        <span class="counter__time-data hours"></span>
+        <span class="counter__time-helper">
+          Hours
+        </span>
+      </div>
+
+      <div class="counter__time-holder">
+        <span class="counter__time-data minutes"></span>
+        <span class="counter__time-helper">
+          Minutes
+        </span>
+      </div>
+
+      <div class="counter__time-holder">
+        <span class="counter__time-data seconds"></span>
+        <span class="counter__time-helper">
+          Seconds
+        </span>
+      </div>
+    </div>
+
+    <h4 class="counter__welcome-message">
+      {{ final_message }}
+    </h4>
+
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Counter",
+    "class": "section section__counter",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Counter"
+      },
+      {
+        "type": "textarea",
+        "id": "welcome_message",
+        "label": "Counter Message",
+        "default": "Hurry up you have just:"
+      },
+      {
+        "type": "textarea",
+        "id": "final_message",
+        "label": "Counter Final Message",
+        "default": "Sorry, you ran out of time!"
+      },
+      {
+        "type": "range",
+        "id": "countdown_year",
+        "label": "Select Year",
+        "min": 2023,
+        "max": 2029,
+        "default": 2023,
+        "step": 1
+      }, {
+        "type": "range",
+        "id": "countdown_month",
+        "label": "Select Month",
+        "min": 1,
+        "max": 12,
+        "default": 1,
+        "step": 1
+      }, {
+        "type": "range",
+        "id": "countdown_day",
+        "label": "Select Day",
+        "min": 1,
+        "max": 31,
+        "default": 1,
+        "step": 1
+      }, {
+        "type": "range",
+        "id": "countdown_hour",
+        "label": "Select Hour",
+        "min": 0,
+        "max": 24,
+        "default": 0,
+        "step": 1
+      }
+    ],
+    "presets": [
+      {
+        "name": "Counter",
+        "category": "Content"
+      }
+    ]
+  }
+{% endschema %}
