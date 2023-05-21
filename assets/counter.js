@@ -34,7 +34,6 @@ function updateCounter() {
   //   minutes.innerHTML = '<span>0</span><span>0</span>';
   //   seconds.innerHTML = '<span>0</span><span>0</span>';
   // }
-
   if (diff < 0) {
     days.innerHTML = '<span>0</span><span>0</span>';
     hours.innerHTML = '<span>0</span><span>0</span>';
